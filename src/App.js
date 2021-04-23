@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import MainDisplay from './Components/MainDisplay'
+import background from './Assets/background.png'
+import logo from './Assets/logo.png'
+import books from './Assets/falling-books.png'
+import './index.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <main id="main" className="App column">
+                <header className="column column--center">
+                    <img src={ logo } alt="" id="logo"/>
+                </header>
+                <img src={ background } alt="" id="background"/>
+                <MainDisplay />
+                <img src={ books } alt="" id="falling-books"/>
+            </main>
+
+        )
+    }
 }
 
 export default App;

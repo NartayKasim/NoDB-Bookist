@@ -1,13 +1,387 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:  Roboto Condensed,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 46pt;
+  line-height: 0;
+}
+
+h2 {
+  color: rgb(73, 73, 73);
+}
+
+h3 {
+  line-height: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* [BELOW] BACKGROUND, LOGO, FALLING BOOKS [BELOW] */
+.App {
+  align-items: center;
+}
+
+header {
+  width: 100%;
+}
+
+#background {
+  /* 2100 x 1179 */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+#logo {
+  /* 705 x 184 */
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 32vw;
+}
+
+#falling-books {
+  /* 408 x 539 */
+  width: 408px;
+  height: 539px;
+}
+
+/* [BELOW] PADDING, MARGINS, SHADOWS [BELOW] */
+.shadow {
+  box-shadow: 0px 3px 3px rgb(75, 75, 75);
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.margin--top {
+  margin-top: 1rem;
+}
+
+.search-clear {
+  margin: 2rem;
+}
+
+
+/* [BELOW] INPUTS AND DROPDOWNS [BELOW] */
+.input {
+  border: none;
+  font-family: Roboto Condensed;
+  background-color: #d2d2d2;
+  color: rgb(49, 49, 49);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.input--default {
+  width: 20.245rem;
+  height: 1.5rem;
+}
+
+.input--large {
+  width: 40rem;
+  height: 2rem;
+  text-align: center;
+}
+
+.dropdown {
+  height: 1.5rem;
+  width: 20.5rem;
+  font-family: Roboto Condensed;
+  border: none;
+  background-color: #d2d2d2;
+  color: rgb(49, 49, 49);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown__options:hover {
+  background-color: green;
+}
+
+/* [BELOW] BUTTONS [BELOW] */
+.btn {
+  border: none;
+  font-family: Roboto Condensed;
+}
+
+.btn--default {
+  width: 10rem;
+  height: 1.6rem;
+}
+
+.btn--default:hover {
+  background-color: rgb(145, 145, 145);
+}
+
+.btn--large {
+  background-color: transparent;
+  width: 18rem;
+  height: 2.5rem;
+}
+
+.btn--large:hover {
+  background-color: rgb(145, 145, 145);
+}
+
+
+/* [BELOW] FLEX MODIFIERS [BELOW] */
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row--center {
+  justify-content: center;
+  align-items: center
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.column--center {
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover{
+  background: rgba(0,0,0,0.4);
+}
+::-webkit-scrollbar-thumb:active{
+  background: rgba(0,0,0,.9);
+}
+
+/* Aside: */
+.aside {
+  width: 5rem;
+  transition: max-width 3s;
+  transition-delay: 2s;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(201, 201, 201);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+}
+
+.aside:hover {
+  background-color: grey; 
+}
+
+
+/* Booklists: */
+.booklists-display {
+  width: 80rem;
+}
+
+.booklists-display__header {
+  width: 100%;
+  
+}
+
+.expand-remove, .expand-create {
+  margin-top: 3rem;
+  width: 100%;
+  height: 4rem;
+  align-items: baseline;
+}
+
+.expand-create > * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.expand-remove--top > * {  
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#edit-test {
+  width: 50px;
+  height: 50px;
+  float: right;
+  background-color: black;
+}
+
+.booklists-header__buttons {
+  width: 70rem;
+  margin-top: 2rem;
+  justify-content: space-around;
+}
+
+.bl-search-buttons {
+  width: 33.33%;
+  height: 3rem;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.booklists-header__search {
+  width: 100%;
+}
+
+#no-matches {
+  margin-top: 10rem;
+  color: red;
+}
+
+.booklist {
+  width: 70rem;
+  margin-top: 10rem;
+}
+
+#booklists-response {
+  width: 100%;
+  height: 2rem;
+  background: grey;
+}
+
+
+/* Bookcard: */
+.bookcard {
+  width: 70rem;
+  margin-top: 1.5rem;
+}
+
+.booklists {
+  margin-left: 1rem;
+  align-items: baseline;
+}
+
+/* BookcardHeader */
+.bookcard__header {
+  margin-left: 1rem;
+}
+
+.title-author {
+  align-items: baseline;
+}
+
+/* THIS IS THE HEIGHT SETTER FOR ALL VARIABLE-DISPLAY COMPONENTS */
+.display {
+  width: 70rem;
+  height: 12rem;
+}
+
+
+/* DefaultDisplay: */
+.default-display {
+  width: 70rem;
+}
+
+.cover {
+  width: 115px;
+  height: 165px;
+  margin-left: 1rem;
+}
+
+.description--wrapper {
+  width: 59rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.description {
+  height: 11rem;
+  margin-top: .4rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 2rem;
+  padding-right: 3px;
+}
+
+
+/* Footer: */
+.bookcard__footer {
+  width: 70rem;
+  height: 2.5rem;
+}
+
+.toggle {
+  width: 25%;
+}
+
+.toggle:hover {
+  background-color: rgb(145, 145, 145);
+  border-style: 2px solid rgb(58, 58, 58);
+}
+
+#read-button {
+  width: 25%;
+}
+
+#read-green {
+  background-color: green;
+  color: white;
+}
+
+#read-green:hover{
+  background-color: rgb(145, 145, 145);
+}
+
+.read {
+  width: 100%;
+  height: 100%;
+}
+
+/* RemoveDisplay: */
+.remove-display > * {
+  margin-left: 1rem;
+  line-height: 1rem;
+}
+
+#remove-response {
+  color: red;
+}
+
+/* AddDisplay: */
+.add-display > * {
+  margin-left: 1rem;
+  line-height: 1rem;
+
+}
+
+.btn--add {
+  margin-left: 1.5rem;
+}
+
+.add-display--new {
+  line-height: .5rem;
+}
+
+#add-response {
+  color: red;
+}
+
+#messages {
+  height: 2rem;
+  width: 100%;
+  background-color: white;
+  color: green;
 }

@@ -36,3 +36,109 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+.bookcard {
+  width: 70rem;
+  margin-top: 1.5rem;
+}
+
+/* BookcardHeader */
+.bookcard__header {
+  margin-left: 1rem;
+}
+
+.title-author {
+  align-items: baseline;
+}
+
+/* THIS IS THE HEIGHT SETTER FOR ALL VARIABLE-DISPLAY COMPONENTS */
+.display {
+  height: 12rem;
+}
+
+/* DefaultDisplay: */
+
+.default-display {
+  width: 70rem;
+}
+
+.cover {
+  width: 115px;
+  height: 175px;
+  margin-left: 1rem;
+}
+
+.description--wrapper {
+  width: 59rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.description {
+  height: 11rem;
+  margin-top: .4rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 2rem;
+  padding-right: 2px;
+}
+
+/* Footer, FooterUpper, FooterLower: */
+.footer-upper {
+  margin-left: 1rem;
+}
+.footer-lower {
+  height: 2.5rem;
+}
+.booklists__footer-upper {
+  align-items: baseline;
+}
+
+.toggle {
+  width: 25%;
+}
+
+.toggle:hover {
+  background-color: rgb(168, 146, 146);
+  border-style: 2px solid rgb(58, 58, 58);
+}
+
+/* 
+.add
+.add-book
+.add-book--new
+.dropdown__options
+.new-list-intro
+btn btn--default
+.input input--default */
+
+/* AddDisplay: */
+.add-display--wrapper {
+  width: 70rem;
+}
+
+.add-display {
+  margin-left: 1rem;
+}
+
+.btn--add {
+  margin-left: 1.5rem;
+}
+
+.add-display--new {
+  line-height: 1rem;
+}
+
+h3 {
+  line-height: 0;
+}
+
+li {
+  list-style:circle;
+  margin-left: 1rem;
+}
